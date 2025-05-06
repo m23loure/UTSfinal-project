@@ -1,0 +1,11 @@
+Model Information:
+* title:	Flower
+* source:	https://sketchfab.com/3d-models/flower-a719abe202bb4f85b3e0b1fded4a7d3a
+* author:	Carlos Nava (https://sketchfab.com/carlosnavapa)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Flower" (https://sketchfab.com/3d-models/flower-a719abe202bb4f85b3e0b1fded4a7d3a) by Carlos Nava (https://sketchfab.com/carlosnavapa) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
