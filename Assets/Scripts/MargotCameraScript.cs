@@ -21,10 +21,10 @@ public class MargotCameraScript : MonoBehaviour
     // OnTriggerEnter devrait être OnTriggerEnter avec une majuscule
     private void OnTriggerEnter(Collider other) // Correction de Collision en Collider et majuscule
     {
-         Debug.Log("Collison tout court" );
+        
         if (other.CompareTag("Player")) // Utilisation de CompareTag pour vérifier l'étiquette
         {
-            Debug.Log("Collison with player !"); 
+            
             Camera.main.transform.position = cameraTransform.position; // Positionnement de la caméra
             Camera.main.transform.rotation = cameraTransform.rotation; // Rotation de la caméra
         }
