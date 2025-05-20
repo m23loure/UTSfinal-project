@@ -20,6 +20,7 @@ public class bearAttack_Jihye : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             animator.SetBool("isPlayerNear", true);
+            roarAudio.Play();
         }
     }
 
@@ -31,19 +32,8 @@ public class bearAttack_Jihye : MonoBehaviour
         }
     }
 
-    public void PlayRoarSound()
-    {
-        if (!roarAudio.isPlaying)
-        {
-            roarAudio.Play();
-        }
-    }
-
     void Update()
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Bear_Attack2") && !roarAudio.isPlaying)
-        {
-            PlayRoarSound();
-        }
+      
     }
 }

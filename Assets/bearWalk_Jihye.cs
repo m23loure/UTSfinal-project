@@ -6,7 +6,8 @@ public class BearWalk_Jihye : MonoBehaviour
     private Transform player;
 
     public float followDistance = 10f;
-    public float moveSpeed = 2f;
+    public float minDistance = 2f; // New: the bear will stop if closer than this
+    public float moveSpeed = 1f;
     public float rotationSpeed = 5f;
 
     void Start()
@@ -19,9 +20,8 @@ public class BearWalk_Jihye : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, player.position);
 
-        if (distance < followDistance)
+        if (distance < followDistance && distance > minDistance)
         {
-        
             Vector3 direction = (player.position - transform.position).normalized;
             Quaternion toRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
             transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
@@ -32,7 +32,6 @@ public class BearWalk_Jihye : MonoBehaviour
         }
         else
         {
-         
             animator.SetBool("isWalking", false);
         }
     }
