@@ -119,7 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &3405045973646436945
+--- !u!1001 &992960759
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -129,7 +129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 544944432781008620, guid: 9a58c4a77552a634295a5a74abfcd12f, type: 3}
       propertyPath: m_Name
-      value: margotsceneprefab
+      value: margotscenev4
       objectReference: {fileID: 0}
     - target: {fileID: 4364997464734167707, guid: 9a58c4a77552a634295a5a74abfcd12f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -171,7 +171,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 292032489287954608, guid: 9a58c4a77552a634295a5a74abfcd12f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -180,4 +181,4 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 3405045973646436945}
+  - {fileID: 992960759}
