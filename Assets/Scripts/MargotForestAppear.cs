@@ -7,8 +7,10 @@ public class MargotForestAppear : MonoBehaviour
     public GameObject targetObject; // L'objet à faire apparaître
     public float fadeDuration = 2f;
     public string triggeringTag = "Player";
-    public AudioSource audioSource; 
-    public AudioSource oldAudio; 
+    public AudioSource audioSource;
+    public AudioSource oldAudio;
+
+    public bool forceAppearOnStart = false;  // inspector에서 테스트용으로 체크 가능
 
     private List<Material> targetMaterials = new List<Material>();
     private bool hasFadedIn = false;
@@ -33,16 +35,24 @@ public class MargotForestAppear : MonoBehaviour
                 targetMaterials.Add(mat);
             }
         }
+
+        if (forceAppearOnStart)
+        {
+            StartCoroutine(FadeIn());
+            if (audioSource != null)
+                audioSource.Play();
+            if (oldAudio != null)
+                oldAudio.Stop();
+        }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (!hasFadedIn && other.CompareTag(triggeringTag))
+        if (!hasFadedIn && other.CompareTag(triggeringTag) && !forceAppearOnStart)
         {
             StartCoroutine(FadeIn());
-            audioSource.Play(); 
-            oldAudio.Stop(); 
-           
+            audioSource.Play();
+            oldAudio.Stop();
         }
     }
 
