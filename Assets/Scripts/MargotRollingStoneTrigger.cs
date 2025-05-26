@@ -6,7 +6,9 @@ public class RollingStonePhysics : MonoBehaviour
     public Transform targetPosition;
     public float forceMagnitude = 10f;
     public string triggeringTag = "Player";
-    public AudioSource rockSound; 
+    public AudioSource rockSound;
+    public GameObject particleEffectPrefab;           // Particle system to instantiate
+    public Transform particleSpawnPoint;              // Where to spawn the particle system
 
     private bool hasRolled = false;
 
@@ -19,8 +21,15 @@ public class RollingStonePhysics : MonoBehaviour
             stoneRigidbody.AddForce(direction * forceMagnitude, ForceMode.Impulse);
             stoneRigidbody.AddTorque(Random.onUnitSphere * forceMagnitude, ForceMode.Impulse);
 
+            if (rockSound != null)
+                rockSound.Play();
+
+            if (particleEffectPrefab != null && particleSpawnPoint != null)
+            {
+                Instantiate(particleEffectPrefab, particleSpawnPoint.position, particleSpawnPoint.rotation);
+            }
+
             hasRolled = true;
-            rockSound.Play(); 
         }
     }
 }
