@@ -22,31 +22,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 215582aba671bbe49b203cffb1ec83c0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -32.58982
+      value: -29.04055
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 215582aba671bbe49b203cffb1ec83c0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.278931
+      value: -28.355644
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 215582aba671bbe49b203cffb1ec83c0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 104.985016
+      value: 185.71051
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 215582aba671bbe49b203cffb1ec83c0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9403648
+      value: -0.94036484
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 215582aba671bbe49b203cffb1ec83c0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 215582aba671bbe49b203cffb1ec83c0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.34016776
+      value: 0.34016764
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 215582aba671bbe49b203cffb1ec83c0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 215582aba671bbe49b203cffb1ec83c0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8553013629818077408}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f973d1908cfca9d40b93c3cccf723d7e, type: 3}
   m_Name: 
@@ -104,7 +104,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8553013629818077408}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b1a41e9e717365f47aa50125792d6a48, type: 3}
