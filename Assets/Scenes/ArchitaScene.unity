@@ -893,7 +893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07b33d4ce56a940a3bbd7d12a7ced17e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: MargotScene2
+  sceneToLoad: MargotLastScene
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

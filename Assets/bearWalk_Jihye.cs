@@ -3,42 +3,65 @@ using UnityEngine;
 public class BearWalk_Jihye : MonoBehaviour
 {
     private Animator animator;
-    private Transform player;
 
-    public float followDistance = 10f;      // 최대 추적 거리
-    public float minDistance = 2f;          // 최소 거리(이보다 가까우면 천천히 움직임)
-    public float moveSpeed = 2f;            // 최대 속도
-    public float rotationSpeed = 5f;        // 회전 속도
+    [Tooltip("Julie to follow")]
+    public Transform julie; // Julie is now passed as a reference
 
-    void Start()
+    [Tooltip("Minimum distance to maintain with Julie")]
+    public float stopDistance = 1f;
+
+    [Tooltip("Maximum walking speed")]
+    public float maxSpeed = 10f;
+
+    [Tooltip("Rotation interpolation speed")]
+    public float rotationSpeed = 5f;
+
+    private void Start()
     {
+        // Get the Animator component
         animator = GetComponent<Animator>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        if (animator != null)
+        {
+            animator.SetBool("isWalking", true); // Start walking
+        }
     }
 
-    void Update()
+    private void Update()
     {
-        float distance = Vector3.Distance(transform.position, player.position);
+        if (julie == null) return;
 
-        if (distance < followDistance)
+        // Calculate the direction and distance to Julie
+        Vector3 direction = julie.position - transform.position;
+        direction.y = 0; // Ignore vertical differences
+
+        float distance = direction.magnitude;
+
+        if (distance > stopDistance)
         {
-            animator.SetBool("isWalking", true);
+            // Smooth rotation towards Julie
+            if (direction != Vector3.zero)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            }
 
-            // 회전 방향 계산
-            Vector3 direction = (player.position - transform.position).normalized;
-            Quaternion toRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            // Dynamically adjust speed so the bear doesn't overshoot
+            float adjustedSpeed = Mathf.Min(maxSpeed, distance - stopDistance); // No Time.deltaTime here
+            Vector3 moveDirection = direction.normalized * adjustedSpeed;
+            transform.position += moveDirection * Time.deltaTime; // Only apply Time.deltaTime once
 
-            // 거리 기반으로 속도 보간 조절
-            float adjustedSpeed = Mathf.Lerp(0f, moveSpeed, (distance - minDistance) / (followDistance - minDistance));
-            adjustedSpeed = Mathf.Clamp(adjustedSpeed, 0.1f, moveSpeed * 0.9f); // 최소속도 유지
-
-            // 이동
-            transform.position += transform.forward * adjustedSpeed * Time.deltaTime;
+            if (animator != null)
+            {
+                animator.SetBool("isWalking", true);
+            }
         }
         else
         {
-            animator.SetBool("isWalking", false);
+            if (animator != null)
+            {
+                animator.SetBool("isWalking", false);
+            }
         }
     }
 }

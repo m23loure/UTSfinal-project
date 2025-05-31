@@ -13,6 +13,7 @@ public class MargotBearStop : MonoBehaviour
             BearWalk_Jihye script = bear.GetComponent<BearWalk_Jihye>();
             if (script != null)
             {
+                Debug.Log("the script is being disabled"); 
                 script.enabled = false;
 
                 animator.SetBool("isWalking", false);
