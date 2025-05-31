@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MargotScene.unity
     guid: 11e97224bc03d334f8bdd846320b6bfc
+  - enabled: 1
+    path: Assets/Scenes/MargotLastScene.unity
+    guid: 6b177f5922361ac47b413b6b5321dbc1
+  - enabled: 1
+    path: Assets/Scenes/JihyeScene.unity
+    guid: f25a70321fee89d438dea9bd340878ac
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
